@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    background-color: #ebf2fd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    font-family: Averta, system-ui;
+}
+
+.back-btn {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+}
+
+.back-btn-user-profile {
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+.view-user-profile {
+    width: 390px;
+    height: 550px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.user-image {
+    display: flex;
+    align-items: start;
+    position: relative;
+    left: 4%;
+}
+
+.view-user-profile img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.view-user-profile h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.view-user-profile p {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.view-user-profile span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.profile-container {
+    width: 1000px;
+    border-radius: 10px;
+    display: flex;
+    align-items: start;
+    gap: 2rem;
+    margin: 50px 0px;
+    display: none;
+}
+
+.aside-container {
+    width: 20%;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.aside-container p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.main-container {
+    width: 85%;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-size: 0.9rem;
+    font-weight: 400;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.main-container h3 {
+    width: 90%;
+    padding: 30px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.user-profile {
+    width: 100%;
+    display: flex;
+    gap: 8rem;
+    padding: 20px 30px;
+    border-bottom: 1px solid #cfd7e6;
+}
+
+.user-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.user-avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.profile-change-button {
+    height: 100%;
+    font-size: 0.7rem;
+    font-weight: 400;
+}
+
+.profile-change-button p {
+    margin-bottom: 3px;
+}
+
+.profile-change-button button {
+    background-color: #ebf2fd;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    font-weight: 400;
+    cursor: pointer;
+    border: 1px solid #cfd7e6;
+}
+
+.details-container {
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-bottom: 1px solid #cfd7e6;
+}
+
+.details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* gap: 5rem; */
+}
+
+.details p {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.details input {
+    width: 70%;
+    height: 50px;
+    border: 1px solid #cfd7e6;
+    background-color: #ebf2fd;
+    padding: 5px 20px;
+    font-size: 0.9rem;
+    /* font-weight: 600; */
+    border-radius: 10px;
+}
+
+.details textarea {
+    width: 70%;
+    border: 1px solid #cfd7e6;
+    background-color: #ebf2fd;
+    padding: 20px;
+    font-size: 0.9rem;
+    /* font-weight: 600; */
+    border-radius: 10px;
+    resize: none;
+}
+
+.details input:focus {
+    outline: none;
+}
+
+.details textarea:focus {
+    outline: none;
+}
+
+.save-button {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.save-button button {
+    background-color: #3bc55e;
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid #cfd7e6;
+}

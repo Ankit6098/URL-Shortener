@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/1063/1063196.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="/css/_navbar.css" />
+    <link rel="stylesheet" href="/css/welcome.css" />
+    <link rel="stylesheet" href="/css/izitoast.css" />
+  </head>
+  <body>
+    <!-- including navbar -->
+    <%- include('_navbar'); %>
+
+    <div class="main">
+      <div class="heading">
+        <h2>
+          Discover your path to a successful career with our Placement Cell
+          Website. Unlock a world of tailored job opportunities.
+        </h2>
+        <p>
+          "Join today and embark on your journey towards a brighter future!"
+        </p>
+      </div>
+      <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+      <dotlottie-player src="https://lottie.host/9a802f1c-cf21-462f-88a7-a575cfcd9015/EvBWRhZWw7.json" background="transparent" speed="1" style="width: 900px; height: 900px; position: relative; top: -8%;" loop autoplay></dotlottie-player>
+    </div>
+
+    <script src="/js/izitoast.js"></script>
+    <script>
+      <% if (flash.success && flash.success.length > 0) { %>
+          iziToast.success({
+              title: 'Success',
+              message: '<%= flash.success %>',
+              theme: 'dark',
+              backgroundColor: 'linear-gradient(130deg, rgba(18,119,243,1) 0%, rgba(11,73,149,1) 97%)',
+              position: 'topCenter',
+              progressBarColor: 'white',
+              transitionInMobile: 'fadeInUp',
+              transitionOutMobile: 'fadeOutUp',
+
+          });
+      <% } %>
+
+      <% if (flash.error && flash.error.length > 0) { %>
+          iziToast.error({
+              title: 'Error',
+              message: '<%= flash.error %>',
+              theme: 'dark',
+              backgroundColor: '#AA0808',
+              position: 'topCenter',
+              progressBarColor: 'white',
+              transitionInMobile: 'fadeInUp',
+              transitionOutMobile: 'fadeOutUp',
+          });
+      <% } %>
+
+      <% if (flash.info && flash.info.length > 0) { %>
+          iziToast.warning({
+              title: 'Caution',
+              message: '<%= flash.info %>',
+              theme: 'dark',
+              backgroundColor: '#FFB300',
+              position: 'topCenter',
+              progressBarColor: 'white',
+              transitionInMobile: 'fadeInUp',
+              transitionOutMobile: 'fadeOutUp',
+          });
+      <% } %>
+
+      <% if (flash.warning && flash.warning.length > 0) { %>
+          iziToast.error({
+              title: 'Error',
+              message: '<%= flash.warning %>',
+              theme: 'dark',
+              backgroundColor: '#AA0808',
+              position: 'topCenter',
+              progressBarColor: 'white',
+              transitionInMobile: 'fadeInUp',
+              transitionOutMobile: 'fadeOutUp',
+          });
+      <% } %>
+    </script>
+  </body>
+</html>
