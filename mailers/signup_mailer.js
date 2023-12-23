@@ -17,14 +17,12 @@ exports.signupWelcome = (newUser) => {
       subject: "Welcome to Placement Cell",
       // html: htmlString,
       html: `<div width:"500px"; height="700px" display="flex" flex-direction="column" >
-                    <h2>Thanks! for Signing Up on Placement Cell</h2>
+                    <h2>Thanks! for Signing Up on Url Shortener</h2>
                     <p>Dear ${newUser.name},</p>
                 
-                    <P width="90%">A heartfelt welcome to the Placement Cell website! We are thrilled 
+                    <P width="90%">A heartfelt welcome to the Url Shortener website! We are thrilled 
                     that you have chosen to be a part of our community. With a commitment to 
-                    helping you achieve your career goals, we offer a plethora of exclusive resources, 
-                    job opportunities, and networking events. Your journey towards a successful future 
-                    begins now, and we are excited to support you every step of the way.</p>
+                    helping you achieve your goals.</p>
                     
                     <p>
                     Best regards,

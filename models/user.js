@@ -20,37 +20,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    phone: {
-        type: Number,
-    },
-    city: {
-        type: String,
-    },
-    country: {
-        type: String,
-    },
-    bio: {
-        type: String,
-    },
-    portfolio: {
-        type: String,
-    },
-    instagram: {
-        type: String,
-    },
-    github: {
-        type: String,
-    },
-    linkedin: {
-        type: String,
-    },
-    twitter: {
-        type: String,
-    },
-    appliedJobs: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Interview'
-    }],
 }, {
     timestamps: true,
 });

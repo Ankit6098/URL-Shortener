@@ -10,6 +10,9 @@ const db = require("./config/mongoose");
 const MongoStore = require("connect-mongo");
 const bcrypt = require("bcrypt");
 
+// use express json
+app.use(express.json());
+
 // use express urlencoded
 app.use(express.urlencoded());
 

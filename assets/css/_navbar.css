@@ -38,6 +38,7 @@ a {
     color: black;
     position: relative;
     bottom: -6px;
+    margin: 0;
 }
 
 .logo img {
@@ -118,6 +119,7 @@ a {
     justify-content: flex-start;
     text-align: left;
     gap: 10px;
+    background-color: transparent;
 }
 
 .user-details img {
@@ -125,37 +127,45 @@ a {
     height: 40px;
     object-fit: cover;
     border-radius: 50%;
+    background-color: transparent;
 }
 
 .user-name {
+    background-color: transparent;
     overflow: auto;
 }
 
 .user-name h3 {
     font-size: 1rem;
     font-weight: 600;
+    margin: 0;
+    background-color: transparent;
 }
 
 .user-name span {
     font-weight: 400;
     overflow-wrap: break-word;
+    background-color: transparent;
 }
 
 .user-action {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
+    background-color: transparent;
 }
 
 .user-action a span {
     font-size: 0.8rem;
     font-weight: 600;
     margin-left: 10px;
+    background-color: transparent;
 }
 
 .user-action a {
     display: flex;
     align-items: center;
+    background-color: transparent;
 }
 
 .nav-login-btn {

@@ -4,8 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/_navbar.css" />
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/izitoast.css" />
 </head>
 <body>
-    <h1>Home</h1>
+
+    <%- include('_navbar'); %>
+
+    <div class="main-container">
+        <div class="heading">
+            <h1><span class="first-word">Urls</span> when shorter, the better</h1>
+            <h5>The simplest URL Shortner you are looking for</h5>
+        </div>
+        <div class="shotUrl-container">
+            <form class="url-form" action="/addUrl" method="post">
+                <input class="input-url" type="text" placeholder="Enter the Url" name="url" required>
+                <button class="input-short-button">Short</button>
+            </form>
+            <div class="shorted-url-container">
+                <!-- find the shorted url -->
+                <input class="shorted-url" type="text" placeholder="Shorted Url">
+                <button class="copy-button" title="Copy"><i class="fa-regular fa-copy"></i></button>
+            </div>
+        </div>
+
+        <div class="url-history-button">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+        </div>
+
+        <div class="url-history-button-container">
+            <div class="url-history-button-container-heading">
+                <h3>Url History</h3>
+            </div>
+            <div class="table-container">
+                <div class="table-heading">
+                    <div class="url-icon">
+                        <!-- <img src="   https://cdn-icons-png.flaticon.com/512/3214/3214746.png "> -->
+                    </div>
+                    <div class="original-url">
+                        <h4>Original Url</h4>
+                    </div>
+                    <div class="short-url">
+                        <h4>Short Url</h4>
+                    </div>
+                    <div class="clicks">
+                        <h4></h4>
+                    </div>
+                </div>
+                <% for (let i=0; i < urls.length; i++) { %>
+                    <!-- check the login user -->
+                    <% if (locals.user.id == urls[i].user) { %>
+                      <div class="looping-data">
+                        <div class="url-icon">
+                          <img src="https://cdn-icons-png.flaticon.com/512/3214/3214746.png">
+                        </div>
+                        <div class="original-url">
+                          <h4><%= urls[i].url %></h4>
+                        </div>
+                        <div class="short-url">
+                          <h4><%= urls[i].shortUrl %></h4>
+                        </div>
+                        <div class="clicks">
+                          <i class="fa-regular fa-copy" onclick="copyToClipboard('<%= urls[i].shortUrl %>')"></i>
+                        </div>
+                      </div>
+                    <% } %>
+                  <% } %>
+                  
+            </div>
+        </div>
+
+    <!-- <div class="table-container">
+        <table>
+            <tr>
+                <th>Short Url</th>
+                <th>Original Url</th>
+                <th>Clicks</th>
+            </tr>
+            <% for(let i=0;i<urls.length;i++){ %>
+                <tr>
+                    <td><a href="<%= urls[i].shortUrl %>" target="_blank"><%= urls[i].shortUrl %></a></td>
+                    <td><%= urls[i].url %></td>
+                    <td><%= urls[i].clicks %></td>
+                </tr>
+            <% } %>
+        </table>
+    </div> -->
+
+    </div>  
+
+    <script src="/js/home.js"></script>
+    <script src="/js/izitoast.js"></script>
+    <script>
+      <% if (flash.success && flash.success.length > 0) { %>
+          iziToast.success({
+              title: 'Success',
+              message: '<%= flash.success %>',
+              theme: 'dark',
+              backgroundColor: 'linear-gradient(130deg, rgba(18,119,243,1) 0%, rgba(11,73,149,1) 97%)',
+              position: 'topCenter',
+              progressBarColor: 'white',
+              transitionInMobile: 'fadeInUp',
+              transitionOutMobile: 'fadeOutUp',
+
+          });
+      <% } %>
+
+      <% if (flash.error && flash.error.length > 0) { %>
+          iziToast.error({
+              title: 'Error',
+              message: '<%= flash.error %>',
+              theme: 'dark',
+              backgroundColor: '#AA0808',
+              position: 'topCenter',
+              progressBarColor: 'white',
+              transitionInMobile: 'fadeInUp',
+              transitionOutMobile: 'fadeOutUp',
+          });
+      <% } %>
+
+      <% if (flash.info && flash.info.length > 0) { %>
+          iziToast.warning({
+              title: 'Caution',
+              message: '<%= flash.info %>',
+              theme: 'dark',
+              backgroundColor: '#FFB300',
+              position: 'topCenter',
+              progressBarColor: 'white',
+              transitionInMobile: 'fadeInUp',
+              transitionOutMobile: 'fadeOutUp',
+          });
+      <% } %>
+
+      <% if (flash.warning && flash.warning.length > 0) { %>
+          iziToast.error({
+              title: 'Error',
+              message: '<%= flash.warning %>',
+              theme: 'dark',
+              backgroundColor: '#AA0808',
+              position: 'topCenter',
+              progressBarColor: 'white',
+              transitionInMobile: 'fadeInUp',
+              transitionOutMobile: 'fadeOutUp',
+          });
+      <% } %>
+    </script>
 </body>
 </html>

@@ -24,50 +24,12 @@
     <div class="logo">
       <img src="   https://cdn-icons-png.flaticon.com/512/10823/10823393.png " alt="" /> <h4>Shortener</h4>
     </div>
-    <% if(!locals.user && !isAdmin){ %>
+    <% if(!locals.user){ %>
     <div class="nav-login">
       <a href="/authentication"><button class="nav-login-btn">Login</button></a>
     </div>
     <% } else { %>
     <div class="nav-login">
-      <% if (isAdmin) { %>
-      <!-- admin -->
-      <div class="admin-img">
-        <img
-          src="   https://cdn-icons-png.flaticon.com/512/2202/2202112.png "
-          alt=""
-        />
-        <i class="fa-solid fa-angle-down"></i>
-      </div>
-      <div class="user-profile-nav animate__animated animate__fadeIn">
-        <div class="user-details">
-          <img
-            src="   https://cdn-icons-png.flaticon.com/512/2202/2202112.png "
-            alt=""
-          />
-          <div class="user-name">
-            <h3>Admin</h3>
-            <span>--</span>
-          </div>
-        </div>
-        <div class="user-action">
-          <a href="/admin/">
-            <span
-              class="material-symbols-outlined"
-              style="font-size: 1.5rem; margin: 0"
-              >grid_view</span
-            >
-            <span>Dashboard</span>
-          </a>
-        </div>
-        <div class="user-logout-btn">
-          <a href="/admin/destroy-session"
-            ><button class="nav-login-btn">Logout</button></a
-          >
-        </div>
-      </div>
-      <% } else { %>
-      <!-- user -->
       <div class="user-img">
         <img src="<%= locals.user.avatar %>" alt="" />
         <i class="fa-solid fa-angle-down"></i>
@@ -81,21 +43,13 @@
           </div>
         </div>
         <div class="user-action">
-          <a href="/dashboard">
+          <a href="/home">
             <span
               class="material-symbols-outlined"
               style="font-size: 1.5rem; margin: 0"
-              >grid_view</span
+              >home</span
             >
-            <span>Dashboard</span>
-          </a>
-          <a href="/userEditProfile">
-            <span
-              class="material-symbols-outlined"
-              style="font-size: 1.5rem; margin: 0"
-              >person</span
-            >
-            <span>View Profile</span>
+            <span>Home</span>
           </a>
         </div>
         <div class="user-logout-btn">
@@ -106,6 +60,5 @@
       </div>
       <% } %>
     </div>
-    <% } %>
   </div>
 </div>
