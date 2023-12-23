@@ -32,7 +32,7 @@ module.exports.addUrl = async (req, res) => {
                 url: req.body.url,
             });
             const createShortid = shortid.generate();
-            url.shortUrl = `http://localhost:8000/${createShortid}`;
+            url.shortUrl = `https://urlshortener-30l7.onrender.com/${createShortid}`;
             url.shortid = createShortid;
             url.user = req.user._id;
             await url.save();
