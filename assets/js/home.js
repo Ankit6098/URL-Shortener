@@ -10,12 +10,20 @@ inputShortButton.addEventListener("click", async (e) => {
   const shortedUrlInput = document.querySelector(".shorted-url");
 
   try {
+    let inputUrl = urlInput.value.trim(); // Trim any leading/trailing whitespaces
+
+    // Check if the input URL starts with "https://" or "http://"
+    if (!inputUrl.startsWith("https://") && !inputUrl.startsWith("http://")) {
+      // If not, prepend "https://"
+      inputUrl = "https://" + inputUrl;
+    }
+
     const response = await fetch("/addUrl", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ url: urlInput.value }),
+      body: JSON.stringify({ url: inputUrl }),
     });
 
     if (response.ok) {
@@ -38,6 +46,7 @@ inputShortButton.addEventListener("click", async (e) => {
     console.error("Error:", error);
   }
 });
+
 
 
 // copy to clipboard
