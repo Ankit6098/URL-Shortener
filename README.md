@@ -5,7 +5,7 @@
 Our URL shortener website leverages a robust tech stack, built on the efficiency and versatility of Node.js and Express for seamless server-side functionality. The generation of unique short IDs is powered by the ShortID library, ensuring concise and distinctive URLs. MongoDB serves as our reliable database, handling data storage and retrieval with agility. Passport.js enhances security through user authentication, while Nodemailer facilitates efficient email communication. Together, this tech stack forms a dynamic and secure foundation, allowing users to effortlessly shorten and manage their URLs with confidence.
 ## Demo
 
-https://urlshortener-30l7.onrender.com/
+https://urlshort.ankithub.me
 
 ## Screen Shot
 ![image](https://github.com/Ankit6098/URL-Shortener/assets/92246613/435cc887-8f31-490f-b584-2c16d1aaf0e2)
