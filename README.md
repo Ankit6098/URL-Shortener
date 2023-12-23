@@ -8,6 +8,8 @@ Our URL shortener website leverages a robust tech stack, built on the efficiency
 https://urlshort.ankithub.me
 
 ## Screen Shot
+![image](https://github.com/Ankit6098/URL-Shortener/assets/92246613/a7b4a2ec-1d0b-49d9-b804-474a9573dec1)
+
 ![image](https://github.com/Ankit6098/URL-Shortener/assets/92246613/435cc887-8f31-490f-b584-2c16d1aaf0e2)
 
 ![image](https://github.com/Ankit6098/URL-Shortener/assets/92246613/202f3318-124a-44cc-b629-fce992f8e319)
