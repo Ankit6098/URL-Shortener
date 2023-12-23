@@ -3,6 +3,42 @@ console.log("home javascript file");
 // short url input
 const inputShortButton = document.querySelector(".input-short-button");
 
+// inputShortButton.addEventListener("click", async (e) => {
+//   e.preventDefault();
+
+//   const urlInput = document.querySelector(".input-url");
+//   const shortedUrlInput = document.querySelector(".shorted-url");
+
+//   try {
+//     const response = await fetch("/addUrl", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({ url: inputUrl }),
+//     });
+
+//     if (response.ok) {
+//       const responseData = await response.json();
+//       shortedUrlInput.value = responseData.url.shortUrl;
+//     } else {
+//       console.error("Failed to shorten URL");
+//     }
+//   } catch (error) {
+//     iziToast.error({
+//       title: "Error",
+//       message: "Url Already Exists",
+//       theme: "dark",
+//       backgroundColor: "#AA0808",
+//       position: "topCenter",
+//       progressBarColor: "white",
+//       transitionInMobile: "fadeInUp",
+//       transitionOutMobile: "fadeOutUp",
+//     });
+//     console.error("Error:", error);
+//   }
+// });
+
 inputShortButton.addEventListener("click", async (e) => {
   e.preventDefault();
 
@@ -10,6 +46,14 @@ inputShortButton.addEventListener("click", async (e) => {
   const shortedUrlInput = document.querySelector(".shorted-url");
 
   try {
+    let inputUrl = urlInput.value.trim(); // Trim any leading/trailing whitespaces
+
+    // Check if the input URL starts with "https://" or "http://"
+    if (!inputUrl.startsWith("https://") && !inputUrl.startsWith("http://")) {
+      // If not, prepend "https://"
+      inputUrl = "https://" + inputUrl;
+    }
+
     const response = await fetch("/addUrl", {
       method: "POST",
       headers: {
@@ -38,6 +82,7 @@ inputShortButton.addEventListener("click", async (e) => {
     console.error("Error:", error);
   }
 });
+
 
 
 
