@@ -176,11 +176,17 @@
   position: relative;
     top: 10%;
     flex-direction: column;
-    width: 40%;
+    width: 60%;
     display: flex;
     height: 80vh;
     gap: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
     display: none;
+}
+
+.url-history-button-container::-webkit-scrollbar {
+  display: none;
 }
 
 .url-history-button-container-heading {
