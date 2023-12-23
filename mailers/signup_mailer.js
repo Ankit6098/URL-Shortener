@@ -14,7 +14,7 @@ exports.signupWelcome = (newUser) => {
     {
       from: "ankitvis609@gmail.com",
       to: newUser.email,
-      subject: "Welcome to Placement Cell",
+      subject: "Welcome to Url Shortener",
       // html: htmlString,
       html: `<div width:"500px"; height="700px" display="flex" flex-direction="column" >
                     <h2>Thanks! for Signing Up on Url Shortener</h2>

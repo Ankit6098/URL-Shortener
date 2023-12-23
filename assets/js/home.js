@@ -9,47 +9,13 @@ inputShortButton.addEventListener("click", async (e) => {
   const urlInput = document.querySelector(".input-url");
   const shortedUrlInput = document.querySelector(".shorted-url");
 
-  if (!urlInput.value) {
-    iziToast.error({
-      title: "Error",
-      message: "Please enter a url",
-      theme: "dark",
-      backgroundColor: "#AA0808",
-      position: "topCenter",
-      progressBarColor: "white",
-      transitionInMobile: "fadeInUp",
-      transitionOutMobile: "fadeOutUp",
-    });
-    return;
-  } else {
-    try {
-      let inputUrl = urlInput.value.trim(); // Trim any leading/trailing whitespaces
+  try {
+    let inputUrl = urlInput.value.trim(); // Trim any leading/trailing whitespaces
 
-      // Check if the input URL starts with "https://" or "http://"
-      if (!inputUrl.startsWith("https://") && !inputUrl.startsWith("http://")) {
-        // If not, prepend "https://"
-        inputUrl = "https://" + inputUrl;
-        console.log(inputUrl);
-      }
-
-      const response = await fetch("/addUrl", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ url: inputUrl }),
-      });
-
-      if (response.ok) {
-        const responseData = await response.json();
-        shortedUrlInput.value = responseData.url.shortUrl;
-      } else {
-        console.error("Failed to shorten URL");
-      }
-    } catch (error) {
+    if (!inputUrl) {
       iziToast.error({
         title: "Error",
-        message: "Url Already Exists",
+        message: "Please enter a valid URL",
         theme: "dark",
         backgroundColor: "#AA0808",
         position: "topCenter",
@@ -57,8 +23,42 @@ inputShortButton.addEventListener("click", async (e) => {
         transitionInMobile: "fadeInUp",
         transitionOutMobile: "fadeOutUp",
       });
-      console.error("Error:", error);
+      return;
     }
+
+    // Check if the input URL starts with "https://" or "http://"
+    if (!inputUrl.startsWith("https://") && !inputUrl.startsWith("http://")) {
+      // If not, prepend "https://"
+      inputUrl = "https://" + inputUrl;
+      console.log(inputUrl);
+    }
+
+    const response = await fetch("/addUrl", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ url: inputUrl }),
+    });
+
+    if (response.ok) {
+      const responseData = await response.json();
+      shortedUrlInput.value = responseData.url.shortUrl;
+    } else {
+      console.error("Failed to shorten URL");
+    }
+  } catch (error) {
+    iziToast.error({
+      title: "Error",
+      message: "Url Already Exists",
+      theme: "dark",
+      backgroundColor: "#AA0808",
+      position: "topCenter",
+      progressBarColor: "white",
+      transitionInMobile: "fadeInUp",
+      transitionOutMobile: "fadeOutUp",
+    });
+    console.error("Error:", error);
   }
 });
 
